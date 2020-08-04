@@ -55,3 +55,9 @@ body, input, button, textarea{
         font-size: 62.5%;
     }
 }
+
+@media(max-height: 700px){
+    :root{
+        font-size: 55%;
+    }
+}
