@@ -1,0 +1,69 @@
+.header-page{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+}
+
+.header-page .top-bar-container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 0;
+    color: var(--color-text-in-primary);
+}
+
+/*Pega apenas a imagm que esteja no primeiro nível dentro do container*/
+
+.header-page .top-bar-container > img{
+    height: 1.8rem;
+}
+
+.header-page .top-bar-container a{
+    height: 3.6rem;
+    transition: opacity 0.2s;
+}
+
+.header-page .top-bar-container a:hover{
+    opacity: 0.6;
+}
+
+.header-page .header-content{
+    width: 90%;
+    position: relative;
+    margin: 3.2rem auto;
+
+}
+
+.header-page .header-content strong{
+    font: 700 3.6rem Archivo;
+    color: var(--color-title-in-primary);
+}
+
+
+@media(min-width:700px){
+    .header-page{
+        height: 240px;
+    }
+
+    .header-page .top-bar-container{
+        max-width: 1100px;
+    }
+
+    .header-page .header-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1;
+        max-width: 740px;
+        margin: 0 auto;
+        padding-bottom: 48px;
+        
+    }
+    .header-page .header-content strong{
+        max-width: 340px;
+    }
+    
+}
