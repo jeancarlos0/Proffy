@@ -1,5 +1,5 @@
-import React, {InputHTMLAttributes} from 'react'
-import './styles.css'
+import React, {InputHTMLAttributes} from 'react';
+import './styles.css';
 
 //InputHTMLAttributes já é padrão do react e contém todos os atributos ddos inputs
 //HTMLInputElement é uma var global já existente, sem necessidade de importação

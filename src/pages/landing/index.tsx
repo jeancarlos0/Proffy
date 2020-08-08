@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
-import './styles.css'
 import logoImg from '../../assets/images/logo.svg'
 import heroImg from '../../assets/images/landing.svg'
 import studyIcon from '../../assets/images/icons/study.svg'
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg'
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
-
+import api from '../../services/api';
+import './styles.css'
 
 function Landing(){
+
+    const [totalConnections, setTotalConnections] = useState(0);
+
+    //A função do primeiro aprametro é apenas exeutada quando o valor do array muda, como ele n muda ela n é executada
+    useEffect(() => {
+        api.get('connections').then((res) => {
+            console.log(res)
+            const { total } = res.data;
+            setTotalConnections(total);
+        });
+    }, []);
+
     return (
         <div id="landing-page">
             <div id="landing-page-content" className="container">
@@ -27,7 +39,7 @@ function Landing(){
                         Dar aula
                     </Link>
                 </div>
-                <span className="total-connections">Total de 200 conexões já feitas <img src={purpleHeartIcon} alt="Conexões realizadas"/></span>
+                <span className="total-connections">Total de {totalConnections} conexões já feitas <img src={purpleHeartIcon} alt="Conexões realizadas"/></span>
             </div>
         </div>    
     )
